@@ -9,7 +9,7 @@ node {
   sh 'git status'
   sh 'pwd'
 
-  stage 'archive' {
+  stage('archive') {
     withEnv(["NEXUS_HOST=nexus.devops.geointservices.io",
              "NEXUS_ORG=venice",
              "NEXUS_REPO=Piazza",
