@@ -10,6 +10,7 @@ node {
              "NEXUS_TEAM=piazza",
              "APP=pipelibdemo",
              "EXT=txt"]) {
+      git url: "https://github.com/venicegeo/pipelib-demo.git"
       u.to_nexus()
     }
   }
