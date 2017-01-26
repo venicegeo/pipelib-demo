@@ -7,6 +7,7 @@ node {
   git url: "https://github.com/venicegeo/pipelib-demo.git", branch: 'master'
 
   sh 'git status'
+  sh 'pwd'
 
   stage 'archive' {
     withEnv(["NEXUS_HOST=nexus.devops.geointservices.io",
