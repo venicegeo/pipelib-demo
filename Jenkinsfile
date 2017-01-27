@@ -10,13 +10,6 @@ node {
   sh 'pwd'
 
   stage('archive') {
-    withEnv(["NEXUS_HOST=nexus.devops.geointservices.io",
-             "NEXUS_ORG=venice",
-             "NEXUS_REPO=Piazza",
-             "NEXUS_TEAM=piazza",
-             "APP=pipelibdemo",
-             "EXT=txt"]) {
-      u.to_nexus()
-    }
+    u.to_nexus()
   }
 }
