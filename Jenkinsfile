@@ -7,6 +7,10 @@ node {
   git url: "https://github.com/venicegeo/pipelib-demo.git", branch: 'master'
 
   stage('archive') {
-    u.nexus_push()
+    u.nexus_post()
+  }
+
+  stage('test') {
+    u.nexus_get()
   }
 }
