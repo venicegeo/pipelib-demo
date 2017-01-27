@@ -9,10 +9,13 @@ node {
 //  stage('archive') {
 //    u.nexus_post()
 //  }
-
-  stage('CI Deploy (int)') {
-    u.cf_deploy('dev')
+  stage('fortify') {
+    u.fortify()
   }
+
+//  stage('CI Deploy (int)') {
+//    u.cf_deploy('dev')
+//  }
 
 
 //  stage('scans') {
