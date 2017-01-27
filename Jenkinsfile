@@ -10,6 +10,6 @@ node {
   sh 'pwd'
 
   stage('archive') {
-    u.to_nexus()
+    u.nexus_push()
   }
 }
