@@ -10,7 +10,11 @@ node {
     u.nexus_post()
   }
 
-  stage('test') {
+  stage('fetch') {
     u.nexus_get()
+  }
+
+  stage('scans') {
+    u.dependency_check()
   }
 }
