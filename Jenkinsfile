@@ -15,7 +15,6 @@ node {
   }
 
   stage('scans') {
-    //u.dependency_check()
     u.ion_connect()
   }
 }
