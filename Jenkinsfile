@@ -1,6 +1,8 @@
+#!/usr/bin/groovy
+
 @Library('pipelib@master')
 
-def u = new io.venicegeo.pipelib.Util()
+def u = new io.venicegeo.pipelib.Util(steps)
 
 node {
   stage('Setup') {
