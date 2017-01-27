@@ -10,18 +10,18 @@ node {
     ])
   }
 
-//  stage('Archive') {
-//    u.nexus_post()
-//  }
+  stage('Archive') {
+    u.nexus_post()
+  }
 
 //  stage('CI Deploy (int)') {
 //    u.cf_deploy('dev') // includes zap
 //  }
 
-  stage('Scans') {
+  //stage('Scans') {
 //    u.dependency_check()
 //    u.ion_connect()
 //    u.fortify()
-    u.sonar()
+   // u.sonar()
   }
 }
