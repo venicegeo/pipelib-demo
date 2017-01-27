@@ -2,7 +2,7 @@
 
 @Library('pipelib@master')
 
-def u = new io.venicegeo.pipelib.Util(steps)
+def u = new io.venicegeo.pipelib.Util()
 
 node {
   stage('Setup') {
