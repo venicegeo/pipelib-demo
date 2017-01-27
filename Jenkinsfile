@@ -3,23 +3,26 @@
 def u = new io.venicegeo.pipelib.Util()
 
 node {
-  stage 'git'
-  git url: "https://github.com/venicegeo/pipelib-demo.git", branch: 'master'
-
-//  stage('archive') {
-//    u.nexus_post()
-//  }
-  stage('fortify') {
-    u.fortify()
+  stage('Setup') {
+    git {
+      url: "https://github.com/venicegeo/pipelib-demo.git",
+      branch: 'master',
+      poll: true,
+      credentialsId: 'venice-ci-pipelib'
+    }
   }
 
-//  stage('CI Deploy (int)') {
-//    u.cf_deploy('dev')
+//  stage('Archive') {
+//    u.nexus_post()
 //  }
 
+//  stage('CI Deploy (int)') {
+//    u.cf_deploy('dev') // includes zap
+//  }
 
-//  stage('scans') {
+//  stage('Scans') {
 //    u.dependency_check()
 //    u.ion_connect()
+//    u.fortify()
 //  }
 }
