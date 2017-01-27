@@ -10,10 +10,6 @@ node {
 //    u.nexus_post()
 //  }
 
-//  stage('fetch') {
-//    u.nexus_get()
-//  }
-
   stage('int-deploy') {
     u.cf_deploy('dev')
   }
