@@ -4,12 +4,12 @@ def u = new io.venicegeo.pipelib.Util()
 
 node {
   stage('Setup') {
-    git {
+    git ([
       url: "https://github.com/venicegeo/pipelib-demo.git",
       branch: 'master',
       poll: true,
       credentialsId: 'venice-ci-pipelib'
-    }
+    ])
   }
 
 //  stage('Archive') {
