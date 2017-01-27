@@ -10,7 +10,7 @@ node {
 //    u.nexus_post()
 //  }
 
-  stage('int-deploy') {
+  stage('CI Deploy (int)') {
     u.cf_deploy('dev')
   }
 
