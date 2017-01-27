@@ -6,15 +6,13 @@ node {
   stage('Setup') {
     git ([
       url: "https://github.com/venicegeo/pipelib-demo.git",
-      branch: 'master',
-      poll: true,
-      credentialsId: 'venice-ci-pipelib'
+      branch: 'master'
     ])
   }
 
-//  stage('Archive') {
-//    u.nexus_post()
-//  }
+  stage('Archive') {
+    u.nexus_post()
+  }
 
 //  stage('CI Deploy (int)') {
 //    u.cf_deploy('dev') // includes zap
