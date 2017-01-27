@@ -14,13 +14,13 @@ node {
 //    u.nexus_get()
 //  }
 
-  //stage('int-deploy') {
-  //u.cf_deploy('int')
-  //}
-
-
-  stage('scans') {
-//    u.dependency_check()
-    u.ion_connect()
+  stage('int-deploy') {
+    u.cf_deploy('dev')
   }
+
+
+//  stage('scans') {
+//    u.dependency_check()
+//    u.ion_connect()
+//  }
 }
