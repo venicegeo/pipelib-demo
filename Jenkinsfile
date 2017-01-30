@@ -24,10 +24,14 @@ node {
 //    u.cf_deploy('dev') // includes zap
 //  }
 
-  stage('Scans') {
-    u.dependency_check()
+//  stage('Scans') {
+//    u.dependency_check()
 //    u.ion_connect()
 //    u.fortify()
 //    u.sonar()
+//  }
+
+  stage('Cleanup') {
+    deleteDir()
   }
 }
