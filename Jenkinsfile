@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 
-@Library('pipelib@v0.0.1')
+@Library('pipelib@master')
 
 def u = new io.venicegeo.pipelib.Util()
 
@@ -12,18 +12,22 @@ node {
     ])
   }
 
-  stage('Archive') {
-    u.nexus_post()
+  stage('Integration Testing (int)') {
+    u.test_postman('int')
   }
+
+//  stage('Archive') {
+//    u.nexus_post()
+//  }
 
 //  stage('CI Deploy (int)') {
 //    u.cf_deploy('dev') // includes zap
 //  }
 
-  //stage('Scans') {
+//  stage('Scans') {
 //    u.dependency_check()
 //    u.ion_connect()
 //    u.fortify()
-   // u.sonar()
-  //}
+//    u.sonar()
+//  }
 }
