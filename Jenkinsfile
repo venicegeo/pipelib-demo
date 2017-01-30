@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 
-@Library('pipelib@master')
+@Library('pipelib@v0.0.1')
 
 def u = new io.venicegeo.pipelib.Util()
 
