@@ -12,9 +12,9 @@ node {
     ])
   }
 
-  stage('Integration Testing (int)') {
-    u.test_postman('int')
-  }
+//  stage('Integration Testing (int)') {
+//    u.test_postman('int')
+//  }
 
 //  stage('Archive') {
 //    u.nexus_post()
@@ -24,10 +24,10 @@ node {
 //    u.cf_deploy('dev') // includes zap
 //  }
 
-//  stage('Scans') {
-//    u.dependency_check()
+  stage('Scans') {
+    u.dependency_check()
 //    u.ion_connect()
 //    u.fortify()
 //    u.sonar()
-//  }
+  }
 }
