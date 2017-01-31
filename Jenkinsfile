@@ -6,27 +6,14 @@ def u = new io.venicegeo.pipelib.Util()
 
 node {
   stage('Parent Setup') {
-    checkout([
-      $class: 'GitSCM',
-      branches: [[name: '*/master']],
-      doGenerateSubmoduleConfigurations: false,
-      extensions: [[$class: 'RelativeTargetDirectory',
-                    relativeTargetDir: 'parentDirectory']],
-      submoduleCfg: [],
-      userRemoteConfigs: [[url: 'https://github.com/venicegeo/pipelib-demo.git']]
-    ])
-
-    sh "ls -al"
-    u.parentProperties = readProperties(file: 'parentDirectory/jenkins.properties')
+    u.parent('https://github.com/venicegeo/pipelib-demo.git')
   }
 
   stage('Setup') {
-    sh "ls -al"
     git ([
       url: "https://github.com/venicegeo/pz-gateway.git",
       branch: 'master'
     ])
-    sh "ls -al"
   }
 
   stage('Test') {
