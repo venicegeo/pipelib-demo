@@ -5,8 +5,7 @@
 def u = new io.venicegeo.pipelib.Util()
 
 node {
-  // first repository
-  Stage('Parent Setup') {
+  stage('Parent Setup') {
     checkout([
       $class: 'GitSCM',
       branches: [[name: '*/master']],
