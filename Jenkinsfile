@@ -2,7 +2,7 @@
 
 @Library('pipelib@master')
 
-def u = new io.venicegeo.pipelib.Util(parentProperties: readProperties file: 'jenkins.properties')
+def u = new io.venicegeo.pipelib.Util(parentProperties: readProperties(file: 'jenkins.properties'))
 
 node {
   stage('Setup') {
