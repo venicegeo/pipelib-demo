@@ -10,7 +10,7 @@ node {
     u.parentProperties = readProperties(file: 'jenkins.properties')
 
     git ([
-      url: "https://github.com/open-sensor-hub/osh-js.git",
+      url: "https://github.com/sbaxter/cli.git",
       branch: 'master'
     ])
   }
