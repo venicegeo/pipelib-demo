@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 
-@Library('pipelib@master')
+@Library('pipelib@master');
 
 node {
   def u = new io.venicegeo.pipelib.Util(parentProperties: readProperties(file: 'jenkins.properties'))
