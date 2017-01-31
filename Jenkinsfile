@@ -8,12 +8,12 @@ node {
   sh "ls -al"
   u.parentProperties = readProperties(file: 'jenkins.properties')
 
-  stage('Setup') {
-    git ([
-      url: "https://github.com/sbaxter/cli.git",
-      branch: 'master'
-    ])
-  }
+//  stage('Setup') {
+//    git ([
+//      url: "https://github.com/sbaxter/cli.git",
+//      branch: 'master'
+//    ])
+//  }
 
   stage('Test') {
     u.proptest()
