@@ -1,9 +1,16 @@
 #!/usr/bin/groovy
 
-@Library('pipelib@master');
+@Library('pipelib@master')
+
+def parentProperties = new Properties()
+def propertiesFile = new File('jenkins.properties')
+propertiesFile.withInputStream {
+  parentProperties.load(it)
+}
+
+def u = new io.venicegeo.pipelib.Util(parentProperties: parentProperties)
 
 node {
-  def u = new io.venicegeo.pipelib.Util(parentProperties: readProperties(file: 'jenkins.properties'))
 
   stage('Setup') {
     git ([
