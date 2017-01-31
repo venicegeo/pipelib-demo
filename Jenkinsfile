@@ -16,10 +16,6 @@ node {
     ])
   }
 
-  stage('Test') {
-    u.proptest()
-  }
-
 //  stage('Integration Testing (int)') {
 //    u.test_postman('int')
 //  }
