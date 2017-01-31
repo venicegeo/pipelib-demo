@@ -7,6 +7,7 @@ def u = new io.venicegeo.pipelib.Util()
 node {
 
   stage('Setup') {
+    sh "ls -al"
     u.parentProperties = readProperties(file: 'jenkins.properties')
 
     git ([
