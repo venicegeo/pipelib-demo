@@ -5,11 +5,10 @@
 def u = new io.venicegeo.pipelib.Util()
 
 node {
+  sh "ls -al"
+  u.parentProperties = readProperties(file: 'jenkins.properties')
 
   stage('Setup') {
-    sh "ls -al"
-    u.parentProperties = readProperties(file: 'jenkins.properties')
-
     git ([
       url: "https://github.com/sbaxter/cli.git",
       branch: 'master'
