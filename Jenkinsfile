@@ -2,9 +2,9 @@
 
 @Library('pipelib@master')
 
-def u = new io.venicegeo.pipelib.Util(parentProperties: readProperties(file: 'jenkins.properties'))
-
 node {
+  def u = new io.venicegeo.pipelib.Util(parentProperties: readProperties(file: 'jenkins.properties'))
+
   stage('Setup') {
     git ([
       url: "https://github.com/open-sensor-hub/osh-js.git",
