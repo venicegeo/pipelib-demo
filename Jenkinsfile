@@ -1,11 +1,14 @@
 #!/usr/bin/groovy
 
-@Library('pipelib@master');
+@Library('pipelib@master')
+
+def u = new io.venicegeo.pipelib.Util()
 
 node {
-  def u = new io.venicegeo.pipelib.Util(parentProperties: readProperties(file: 'jenkins.properties'))
 
   stage('Setup') {
+    u.parentProperties = readProperties(file: 'jenkins.properties')
+
     git ([
       url: "https://github.com/open-sensor-hub/osh-js.git",
       branch: 'master'
