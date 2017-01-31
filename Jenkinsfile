@@ -4,7 +4,9 @@
 
 node {
 
-  def u = new io.venicegeo.pipelib.Util()
+  def u = new io.venicegeo.pipelib.Util(
+    foobar: 'hello'
+  )
 
   stage('Parent Setup') {
     u.parent('https://github.com/venicegeo/pipelib-demo.git')
