@@ -38,7 +38,7 @@ node {
 //    u.sonar()
 //  }
 
-//  stage('Cleanup') {
-//    deleteDir()
-//  }
+  stage('Cleanup') {
+    deleteDir()
+  }
 }
