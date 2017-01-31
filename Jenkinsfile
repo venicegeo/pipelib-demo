@@ -1,12 +1,14 @@
 #!/usr/bin/groovy
 
-@Library('pipelib@master')
-
-def u = new io.venicegeo.pipelib.Util()
+@Library('pipelib@master') _
 
 node {
+
+  def u = new io.venicegeo.pipelib.Util()
+
   stage('Parent Setup') {
     u.parent('https://github.com/venicegeo/pipelib-demo.git')
+    u.setup()
   }
 
   stage('Setup') {
