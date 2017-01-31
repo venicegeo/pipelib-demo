@@ -2,14 +2,18 @@
 
 @Library('pipelib@master')
 
-def u = new io.venicegeo.pipelib.Util()
+def u = new io.venicegeo.pipelib.Util(parentProperties: readProperties file: 'jenkins.properties')
 
 node {
   stage('Setup') {
     git ([
-      url: "https://github.com/venicegeo/pipelib-demo.git",
+      url: "https://github.com/open-sensor-hub/osh-js.git",
       branch: 'master'
     ])
+  }
+
+  stage('Test') {
+    u.proptest()
   }
 
 //  stage('Integration Testing (int)') {
@@ -24,12 +28,12 @@ node {
 //    u.cf_deploy('dev') // includes zap
 //  }
 
-  stage('Scans') {
-    u.dependency_check()
+//  stage('Scans') {
+//    u.dependency_check()
 //    u.ion_connect()
 //    u.fortify()
 //    u.sonar()
-  }
+//  }
 
 //  stage('Cleanup') {
 //    deleteDir()
