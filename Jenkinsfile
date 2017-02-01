@@ -1,15 +1,10 @@
 #!/usr/bin/groovy
 
-@Library('pipelib@master') _
+@Library('pipelib@v0.1.0') _
+
+def u = new io.venicegeo.pipelib.Util()
 
 node {
-
-  def u = new io.venicegeo.pipelib.Util(foobar: 'hello')
-
-  stage('Parent Setup') {
-    u.parent('https://github.com/venicegeo/pipelib-demo.git')
-    u.setup()
-  }
 
   stage('Setup') {
     git ([
@@ -18,24 +13,20 @@ node {
     ])
   }
 
-//  stage('Integration Testing (int)') {
-//    u.test_postman('int')
-//  }
+  stage('Archive') {
+    u.nexus_post()
+  }
 
-//  stage('Archive') {
-//    u.nexus_post()
-//  }
+  stage('CI Deploy (int)') {
+    u.cf_deploy('dev') // includes zap
+  }
 
-//  stage('CI Deploy (int)') {
-//    u.cf_deploy('dev') // includes zap
-//  }
-
-//  stage('Scans') {
-//    u.dependency_check()
-//    u.ion_connect()
-//    u.fortify()
-//    u.sonar()
-//  }
+  stage('Scans') {
+    u.dependency_check()
+    u.ion_connect()
+    u.sonar()
+    u.fortify()
+  }
 
   stage('Cleanup') {
     deleteDir()
