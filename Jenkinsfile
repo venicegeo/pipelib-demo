@@ -5,7 +5,7 @@
 node {
   stage('Archive') {
     nexusPost {
-      host: "myhost.com"
+      host = "myhost.com"
     }
   }
 }
