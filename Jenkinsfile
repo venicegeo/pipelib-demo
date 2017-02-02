@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 
-@Library('pipelib@shb/vars')
+@Library('pipelib@shb/vars') _
 
 node {
   stage('Archive') {
