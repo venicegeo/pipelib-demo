@@ -15,6 +15,7 @@ node {
     mvnPut {
       app = 'pipelibdemo'
       packaging = 'txt'
+      mvnProject = 'ops'
     }
   }
 }
