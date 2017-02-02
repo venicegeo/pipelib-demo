@@ -4,8 +4,9 @@
 
 node {
   stage('Archive') {
-    nexusPost {
-      NEXUS_HOST = "myhost.com"
+    mvnPut {
+      app = 'pipelibdemo'
+      packaging = 'txt'
     }
   }
 }
