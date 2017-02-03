@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 
-@Library('pipelib@shb/vars') _
+@Library('pipelib@v0.2.0') _
 
 node {
   // Bring your own git repo.
