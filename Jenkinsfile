@@ -5,7 +5,7 @@
 node {
   // Bring your own git repo.
   stage('Setup') {
-    deleteDir
+    deleteDir()
     git([
       url: "https://github.com/venicegeo/pipelib-demo.git",
       branch: "master"
@@ -13,30 +13,30 @@ node {
   }
 
   stage('Archive') {
-    mavenPush
+    mavenPush()
   }
 
   stage('Initial Scans') {
-    dependencyCheck
-    ionConnect
-    fortify
+    dependencyCheck()
+    ionConnect()
+    fortify()
   }
 
   stage('CI Deploy') {
-    cfPush
-    zap
-    cfBgDeploy
+    cfPush()
+    zap()
+    cfBgDeploy()
   }
 
   stage('Integration Tests') {
-    postman
+    postman()
   }
 
   stage('Final Scans') {
-    fortify
+    fortify()
   }
 
   stage('Cleanup') {
-    deleteDir
+    deleteDir()
   }
 }
