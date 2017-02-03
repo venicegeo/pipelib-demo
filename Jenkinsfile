@@ -16,16 +16,17 @@ node {
 //    mavenPush()
 //  }
 
-//  stage('Initial Scans') {
+  stage('Initial Scans') {
 //    dependencyCheck()
 //    ionConnect()
-//  }
-
-  stage('CI Deploy') {
-    cfPush()
-    zap()
-    cfBgDeploy()
+    sonar()
   }
+
+//  stage('CI Deploy') {
+//    cfPush()
+//    zap()
+//    cfBgDeploy()
+//  }
 
   stage('Integration Tests') {
     postman()
