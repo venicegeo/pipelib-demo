@@ -22,28 +22,28 @@ node {
 //    sonar()
 //  }
 
-//  stage('CI Deploy') {
-//    cfPush()
+  stage('CI Deploy') {
+    cfPush()
 //    zap()
-//    cfBgDeploy()
-//  }
+    cfBgDeploy()
+  }
 
 //  stage('Integration Tests') {
 //    postman()
 //  }
 
-//  stage('Staging Deploy') {
-//    cfPush {
-//      cfTarget = 'stage'
-//    }
-//    cfBgDeploy {
-//      cfTarget = 'stage'
-//    }
-//  }
-
-  stage('Final Scans') {
-    fortify()
+  stage('Staging Deploy') {
+    cfPush {
+      cfTarget = 'stage'
+    }
+    cfBgDeploy {
+      cfTarget = 'stage'
+    }
   }
+
+//  stage('Final Scans') {
+//    fortify()
+//  }
 
   stage('Cleanup') {
     deleteDir()
