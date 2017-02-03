@@ -16,11 +16,11 @@ node {
 //    mavenPush()
 //  }
 
-  stage('Initial Scans') {
+//  stage('Initial Scans') {
 //    dependencyCheck()
 //    ionConnect()
-    sonar()
-  }
+//    sonar()
+//  }
 
 //  stage('CI Deploy') {
 //    cfPush()
@@ -28,9 +28,18 @@ node {
 //    cfBgDeploy()
 //  }
 
-  stage('Integration Tests') {
-    postman()
-  }
+//  stage('Integration Tests') {
+//    postman()
+//  }
+
+//  stage('Staging Deploy') {
+//    cfPush {
+//      cfTarget = 'stage'
+//    }
+//    cfBgDeploy {
+//      cfTarget = 'stage'
+//    }
+//  }
 
   stage('Final Scans') {
     fortify()
