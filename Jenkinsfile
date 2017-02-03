@@ -12,9 +12,10 @@ node {
     ])
   }
 
-//  stage('Archive') {
-//    mavenPush()
-//  }
+  stage('Archive') {
+    mavenPush()
+    mavenPull()
+  }
 
 //  stage('Initial Scans') {
 //    dependencyCheck()
@@ -22,24 +23,24 @@ node {
 //    sonar()
 //  }
 
-  stage('CI Deploy') {
-    cfPush()
+//  stage('CI Deploy') {
+//    cfPush()
 //    zap()
-    cfBgDeploy()
-  }
+//    cfBgDeploy()
+//  }
 
 //  stage('Integration Tests') {
 //    postman()
 //  }
 
-  stage('Staging Deploy') {
-    cfPush {
-      cfTarget = 'stage'
-    }
-    cfBgDeploy {
-      cfTarget = 'stage'
-    }
-  }
+//  stage('Staging Deploy') {
+//    cfPush {
+//      cfTarget = 'stage'
+//    }
+//    cfBgDeploy {
+//      cfTarget = 'stage'
+//    }
+//  }
 
 //  stage('Final Scans') {
 //    fortify()
