@@ -17,34 +17,34 @@ node {
     mavenPull()
   }
 
-//  stage('Initial Scans') {
-//    dependencyCheck()
-//    ionConnect()
-//    sonar()
-//  }
+  stage('Initial Scans') {
+    dependencyCheck()
+    ionConnect()
+    sonar()
+  }
 
-//  stage('CI Deploy') {
-//    cfPush()
-//    zap()
-//    cfBgDeploy()
-//  }
+  stage('CI Deploy') {
+    cfPush()
+    zap()
+    cfBgDeploy()
+  }
 
-//  stage('Integration Tests') {
-//    postman()
-//  }
+  stage('Integration Tests') {
+    postman()
+  }
 
-//  stage('Staging Deploy') {
-//    cfPush {
-//      cfTarget = 'stage'
-//    }
-//    cfBgDeploy {
-//      cfTarget = 'stage'
-//    }
-//  }
+  stage('Staging Deploy') {
+    cfPush {
+      cfTarget = 'stage'
+    }
+    cfBgDeploy {
+      cfTarget = 'stage'
+    }
+  }
 
-//  stage('Final Scans') {
-//    fortify()
-//  }
+  stage('Final Scans') {
+    fortify()
+  }
 
   stage('Cleanup') {
     deleteDir()
