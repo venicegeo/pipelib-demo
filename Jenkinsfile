@@ -16,11 +16,10 @@ node {
 //    mavenPush()
 //  }
 
-  stage('Initial Scans') {
+//  stage('Initial Scans') {
 //    dependencyCheck()
-    ionConnect()
-    fortify()
-  }
+//    ionConnect()
+//  }
 
   stage('CI Deploy') {
     cfPush()
