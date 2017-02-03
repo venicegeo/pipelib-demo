@@ -13,7 +13,7 @@ node {
   }
 
   stage('Archive') {
-    mavenPush()
+    mavenPush{}
     mavenPull()
   }
 
