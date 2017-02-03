@@ -13,9 +13,7 @@ node {
   }
 
   stage('Archive') {
-    mavenPush {
-      foo = 'bar'
-    }
+    mavenPush()
   }
 
   stage('Initial Scans') {
