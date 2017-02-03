@@ -1,5 +1,4 @@
-#!/usr/bin/groovy
-
+#!/usr/bin/groovy 
 @Library('pipelib@shb/body') _
 
 node {
@@ -13,7 +12,7 @@ node {
   }
 
   stage('Archive') {
-    mavenPush{}
+    mavenPush()
     mavenPull()
   }
 
