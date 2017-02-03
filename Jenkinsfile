@@ -12,12 +12,12 @@ node {
     ])
   }
 
-  stage('Archive') {
-    mavenPush()
-  }
+//  stage('Archive') {
+//    mavenPush()
+//  }
 
   stage('Initial Scans') {
-    dependencyCheck()
+//    dependencyCheck()
     ionConnect()
     fortify()
   }
